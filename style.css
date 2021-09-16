@@ -1,0 +1,144 @@
+/*
+WARNING!!!
+THIS CODE AND THE STRUCTURE OF THE HTML DOCUMENT IS VERY UGLY! ONLY MADE SO THAT IT WORKS. :D
+I MIGHT IMPROVE IT LATER...
+*/
+
+/* STYLING FOR ALL DIVS */
+div {
+    font-size: 14pt;
+}
+
+/* THE VAAITUSLOMAKE FORM */
+.form {
+    border-left: 1px solid #000;
+    width: 600px;
+    border-bottom: 1px solid #000;
+}
+
+/* UPPERMOST ROW FOR THE DOCUMENT HEADING */
+.toptop-row {
+    width:99.9%;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+}
+
+/* THE (second) UPPERMOST ROW IN THE FORM, CONTAINS BASIC INFO ABOUT THE MEASUREMENT SCENARIO */
+.top-row {
+    border-bottom: 1px solid #000;
+    border-top: 1px solid #000;
+    border-right: 1px solid #000;
+    display: flex;
+    flex-direction: row;
+    width:99.9%;
+}
+
+.top-row > div {
+    padding:2px;
+}
+
+.year {
+    width:10%;
+}
+
+.date {
+    width:15%;
+}
+
+.time {
+    width:20%;
+}
+
+.weather {
+    width: 32%;
+}
+
+.hav {
+    width:23%;
+}
+
+/* MEASUREMENTS CONTAINER, CONTAINS THE MEASUREMENT RESULTS AND THEIR HEADERS IN SEPARATE COLUMNS */
+.measurements {
+    display: flex;
+    flex-direction: row;
+    width:100%;
+}
+
+/* A COLUMN */
+.col {
+    border-right: 1px solid #000;
+}
+
+/* THE COLUMN AND THEIR SIZES FOR NUM, TAAKSE AND SO ON, UGLY CODE/STRUCTURE :D */
+
+.col-num {
+    width:12%
+}
+
+.col-taakse {
+    width:12%;
+}
+
+.col-eteen {
+    width:12%;
+}
+
+.col-plus {
+    width:12%;
+}
+
+.col-minus {
+    width:12%;
+}
+
+.col-havkork {
+    width:15%;
+}
+
+.col-korj {
+    width:10%;
+}
+
+.col-lopkork {
+    width:15%;
+}
+
+/* HEADER IN A COLUMN */
+.head {
+    border-bottom: 1px solid #000;
+}
+
+/* ALIGN TEXT TO CENTER IN ALL HEADERS AND CELLS */
+.head, .cell {
+    text-align: center;
+    padding:4px;
+}
+
+/* CELL STYLING (BORDER, WIDTH, HEIGHT, ETC.) */
+.cell {
+    border-bottom: 1px solid #000;
+    width: 90%;
+    height:14pt;
+}
+
+/* THESE FOUR COLUMNS NEED TO HAVE THEIR CELLS SHIFTED UP 50% OF THE COLUMN HEIGHT, CURRENTLY USING AN UGLY CHEWGUM SOLUTION :D */
+.col-taakse > .cells{
+    margin-top:-11pt
+}
+
+.col-eteen > .cells{
+    margin-top:-11pt
+}
+
+.col-plus > .cells{
+    margin-top:-11pt
+}
+
+.col-minus > .cells{
+    margin-top:-11pt
+}
+
+/* REMOVE BOTTOM BORDER FROM LAST INSTANCES OF "CELL", BECAUSE THE FORM ELEMENT WILL PUT THE BOTTOM BORDER */
+.col-num .cell:last-of-type, .col-havkork .cell:last-of-type, .col-korj .cell:last-of-type, .col-lopkork .cell:last-of-type {
+    border-bottom: none;
+}
