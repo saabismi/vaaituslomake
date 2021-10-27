@@ -1,3 +1,20 @@
+// buttons for getting necessary greek letters to your clipboard
+function clipboard(char) {
+    let copied;
+    if(char == "omega") {
+        copied = "ω";
+    } else if(char == "sigma") {
+        copied = "Σ";
+    } else if(char == "delta") {
+        copied = "Δ";
+    }
+    navigator.permissions.query({name: "clipboard-write"}).then(result => {
+        if (result.state == "granted" || result.state == "prompt") {
+            navigator.clipboard.writeText(copied);
+        }
+      });
+}
+
 // Code for creating the cell containers and cells automatically, so there's not as much ugly hardcoded html
 
 const col = document.getElementsByClassName("col");
@@ -37,3 +54,16 @@ function editText(id) {
     let value = prompt("Syötä arvo:");
     obj.innerText = value;
 }
+
+// 32, 64, 96, 128 ignoorataan
+/*
+
+33-65 = x
+
+if x > 0 laitetaan 97, else 129
+
+33+32=65
+65+32=97
+97+32=129
+
+*/
